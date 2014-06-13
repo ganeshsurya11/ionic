@@ -1,4 +1,4 @@
-<html ng-app="mySuperApp">
+<html ng-app="todo">
   <head>
     <meta charset="utf-8">
     <title> Popups </title>
@@ -8,60 +8,27 @@
     <script src="http://code.ionicframework.com/1.0.0-beta.6/js/ionic.bundle.js"></script>
     <script type="text/javascript" src="test.js"></script>
   </head>
-  <body>
-  	<div class="ionic-body active-preview" id="example-header">
-        <div class="bar bar-header bar-balanced">
-          <button class="button icon ion-navicon button-clear"></button>
-          <div class="h1 title">Header</div>
-        </div>
-        
- 
-<ion-content>
-      <ul class="list">
-
-        <li class="item">
-          Battletoads
-        </li>
-        <li class="item">
-          Contra
-        </li>
-        <li class="item">
-          Duck Tales
-        </li>
-        <li class="item">
-          Mega Man
-        </li>
-        <li class="item">
-          Metroid
-        </li>
-        <li class="item">
-          Mike Tyson's Punch-Out
-        </li>
-        <li class="item">
-          R.C. Pro-Am
-        </li>
-        <li class="item">
-          Spy Hunter
-        </li>
-        <li class="item">
-          Super Mario Bros.
-        </li>
-        <li class="item">
-          The Legend of Zelda
-        </li>
-
-      </ul>
-</ion-content>
- 
-        
-        <div class="bar bar-footer bar-calm">
-        	<div class="title">Footer</div>	
-          <button class="button button-clear pull-right icon ion-chevron-right icon-right"> Right</button>
-        </div>
-
-        
-  </div>
+  
+  <body ng-controller="appCtrl">
     
+    <ion-side-menu-content>
+  <ion-header-bar class="bar-energized">
+    <img src="images/launching_icon.png" width="40"> <h1 class="title">{{Title}}</h1>
+  </ion-header-bar>
+  <ion-content>
+    <!-- our list and list items -->
+    <ion-list ng-controller="tasksCtrl">
+      <ion-item ng-repeat="task in tasks">
+        {{task.title}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-side-menu-content>
+    
+    <div class="bar bar-footer bar-balanced">
+      <div class="title">Footer</div>
+    </div>
+
     
   </body>
 </html>
